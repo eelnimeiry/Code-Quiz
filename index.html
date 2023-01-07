@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,11 +8,15 @@
     <link rel="stylesheet" href="style.css">
     <title>Coding Quiz</title>
 </head>
+
 <body>
     <div id="timer">timer: <span id="time-left"></span></div>
-    <header class="start-section"><h1>Coding Quiz</h1>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure ipsam delectus ab illo perferendis error at recusandae voluptatem! Eum debitis animi nobis, quisquam repellendus sapiente laudantium officia possimus vero non.</p>
-    <button id="start">Start Quiz</button>
+    <header class="start-section">
+        <h1>Coding Quiz</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure ipsam delectus ab illo perferendis error at
+            recusandae voluptatem! Eum debitis animi nobis, quisquam repellendus sapiente laudantium officia possimus
+            vero non.</p>
+        <button id="start">Start Quiz</button>
     </header>
     <div class="questions">
         <div class="question-title">
@@ -19,6 +24,13 @@
         <div class="answers"></div>
         <h6 id="rightwrong"></h6>
     </div>
-   <script src="script.js"></script> 
+    <div id="endquiz">
+        <h5 id="score"></h5>
+        <input type="text" id="username" placeholder="Enter Player name" />
+        <button id="saveuser">Save Player Score</button>
+    </div>
+<a href="./highscore.html">Check Previous High Score</a>
+    <script src="script.js"></script>
 </body>
+
 </html>

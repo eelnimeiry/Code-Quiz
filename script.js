@@ -41,11 +41,13 @@ var questionEl = document.querySelector(".questions")
 var questionTitle = document.querySelector(".question-title")
 var answersEl = document.querySelector(".answers")
 var rightWrongEl = document.getElementById("rightwrong")
+var endQuizEl= document.getElementById("endquiz")
+var saveuserbutton=document.getElementById("saveuser")
 var timeleft = 60
 var timeinterval;
 var currentIndex = 0
 var score = 0
-
+endQuizEl.style.display="none"
 startBtn.addEventListener("click", function () {
   startSection.classList.add("hide")
   createOptions()
@@ -73,7 +75,10 @@ function createOptions() {
 }
 
 function endQuiz() { 
-
+questionEl.style.display = "none"
+clearInterval(timeinterval)
+endQuizEl.style.display="block"
+document.getElementById("score").textContent = "Your Final score  : "+score+timeleft
 }
 
 function showQuestion() {
@@ -107,3 +112,14 @@ function checkAnswers() {
   } 
   
 }
+saveuserbutton.addEventListener("click",function(){
+  var user = document.getElementById("username").value
+  var storedScore = JSON.parse(localStorage.getItem("codequiz")) || []
+  storedScore.push({
+    user:user,
+    score: score+timeleft
+  })
+  localStorage.setItem("codequiz",JSON.stringify(storedScore))
+  endQuizEl.style.display="none"
+  
+})
